@@ -14,7 +14,7 @@ export const Login = () => {
             password: values.password
         }).then((response) => {
             const token = response.data.data.access_token;
-            localStorage.setItem('keyItemName', token);
+            localStorage.setItem('token', token);
             history.push('/campaign-list');
         }).catch((error) => {
             console.error('error');
