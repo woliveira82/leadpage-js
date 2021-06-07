@@ -1,30 +1,30 @@
 import React, { useState, useEffect } from 'react';
-import { Layout, Table, Tag, Space } from 'antd';
+import { Layout, Table, Space } from 'antd';
 import { CampaignListContent } from './styles';
 import { api } from '../../utils/axios';
 
 const { Header, Content } = Layout;
 const columns = [
     {
-        title: 'NAME',
+        title: '',
+        dataIndex: 'key',
+        key: 'key',
+    }, {
+        title: 'ACTION',
         dataIndex: 'name',
         key: 'name',
         render: text => <a>{text}</a>,
     }, {
-        title: 'BEGIN',
-        dataIndex: 'auto_activation',
-        key: 'auto_activation',
-    }, {
-        title: 'END',
-        dataIndex: 'auto_deactivation',
-        key: 'auto_deactivation',
+        title: 'DESCRIPTION',
+        dataIndex: 'description',
+        key: 'description',
     }, {
         title: 'Action',
-        key: 'action',
-        render: () => (
-            <Space size="middle">
-                <a>Select</a>
-                <a>Delete</a>
+        key: 'id',
+        render: (id) => (
+            <Space size='middle'>
+                <a href='/campaign/{id}'>Select</a>
+                <a href='/campaign'>Delete</a>
             </Space>
         ),
     },
@@ -50,9 +50,7 @@ export const CampaignList = () => {
                 <Header className="site-layout-background" style={{ padding: 0 }} />
                 <Content style={{ margin: '0 16px' }}>
                     <CampaignListContent>
-                        
                         <Table columns={columns} dataSource={campaignList} />
-
                     </CampaignListContent>                   
                 </Content>
         </Layout>
