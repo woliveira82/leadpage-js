@@ -33,5 +33,10 @@ export const PageRight = styled.div`
     
 export const PageLeft = styled.div`
     text-align: left;
-    margin-left: 0.5rem;
+`;
+
+export const InfoGrid = styled.div`
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 0.8rem;
 `;
