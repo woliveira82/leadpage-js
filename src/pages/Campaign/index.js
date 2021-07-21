@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Layout, Table, Space, Switch, DatePicker } from 'antd';
+import { Layout, Table, Space, Switch, DatePicker, Button } from 'antd';
 import { Page, PageContent, H1, P, H2, PageRight, PageLeft, InfoGrid } from './styles';
 import { api } from '../../utils/axios';
 import { CloseOutlined, CheckOutlined } from '@ant-design/icons';
@@ -116,7 +116,7 @@ export const Campaign = () => {
                             </InfoGrid>
                         </PageContent>
                         <PageContent>
-                            <H2>E-MAILS</H2>
+                            <H2>E-MAILS <Button href="/email">new</Button></H2>
                         </PageContent>
                         <PageContent>
                             <Table columns={columns} dataSource={[]} />
